@@ -20,7 +20,7 @@ def client():
 def test_first_three(client):
     response = client.get('/members')
     members = json.loads(response.data)
-    assert len(members) == 3
+    assert len(members) == 3 #Esta no entiendo por qué no está pasando, si mi lista tiene 3 componentes
 
 @pytest.mark.it("Implement method POST /member to add a new member")
 def test_add_implementation(client):
@@ -28,7 +28,7 @@ def test_add_implementation(client):
 		"first_name": "Tommy",
         "id": 3443,
 		"age": 23,
-		"lucky_numbers": [34,65,23,4,6]
+		"lucky_numbers": [34,65,23,4,6] #Este no pasa porque me está tomando el error 400 igual al 200
 	})
     assert response.status_code == 200
 
